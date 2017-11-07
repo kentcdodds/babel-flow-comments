@@ -1,19 +1,19 @@
 # babel-flow-comments + es2015 classes bug
 
-1. `npm install`
-2. `npm run only-flow` - see how the `/*:: <Props, State>*/` comment is added correctly
-3. `npm run both` - see how the `/*:: <Props, State>*/` comment is gone entirely
+Transforms:
 
-The transforms in question:
+- [`babel-plugin-transform-flow-comments`](https://npmjs.com/package/babel-plugin-transform-flow-comments)
+- [`babel-plugin-transform-es2015-classes`](https://npmjs.com/package/babel-plugin-transform-es2015-classes)
 
-  - [`babel-plugin-transform-flow-comments`](https://npmjs.com/package/babel-plugin-transform-flow-comments)
-  - [`babel-plugin-transform-es2015-classes`](https://npmjs.com/package/babel-plugin-transform-es2015-classes)
+Files:
 
-The `only-flow` script transpiles `index.js` with the `transform-flow-comments`
-plugin only. The `both` script transpiles `index.js` with both plugins.
+1. `index.js` - the source
+2. `only-flow.js` - transforming with transform-flow-comments alone
+3. `both.js` - transforming with both transforms
+4. `flow-then-classes.js` - transforming with transform-flow-comments followed by another transform with transform-es2015-classes
 
-You can see the output in `only-flow.js` and `both.js`. Interestingly, if I run
-babel with `transform-es2015-classes` on `only-flow.js` then I get
-`flow-then-classes.js` which is correct I think.
+`only-flow.js` and `flow-then-classes.js` both work as expected, annotations
+are added properly. `both.js` however is missing the `/*:: <Props>*/`
+annotation.
 
-**Note**: the files have been autoformatted with `prettier` thanks to my editor...
+[Bug](https://github.com/babel/babel/issues/6767)

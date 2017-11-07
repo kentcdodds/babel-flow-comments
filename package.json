@@ -4,9 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "only-flow": "babel --plugins transform-flow-comments index.js",
+    "only-flow":
+      "babel --plugins transform-flow-comments index.js > only-flow.js",
     "both":
-      "babel --plugins transform-es2015-classes,transform-flow-comments index.js"
+      "babel --plugins transform-es2015-classes,transform-flow-comments index.js > both.js",
+    "flow-then-classes":
+      "babel --plugins transform-flow-comments index.js | babel --plugins transform-es2015-classes > flow-then-classes.js"
   },
   "keywords": [],
   "author": "Kent C. Dodds <kent@doddsfamily.us> (http://kentcdodds.com/)",

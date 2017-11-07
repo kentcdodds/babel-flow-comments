@@ -1,6 +1,7 @@
 // @flow
 
-/*:: type Props = {}*/
+/*:: type A = {}*/
 
-class B extends A /*:: <Props>*/ {
-}
+
+class B extends C /*:: <Props>*/ {}
+
