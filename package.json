@@ -6,7 +6,7 @@
   "scripts": {
     "only-flow": "babel --plugins transform-flow-comments index.js",
     "both":
-      "babel --plugins transform-flow-comments,transform-es2015-classes index.js"
+      "babel --plugins transform-es2015-classes,transform-flow-comments index.js"
   },
   "keywords": [],
   "author": "Kent C. Dodds <kent@doddsfamily.us> (http://kentcdodds.com/)",
