@@ -1,0 +1,20 @@
+{
+  "name": "babel-flow-comments",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "only-flow": "babel --plugins transform-flow-comments index.js",
+    "both":
+      "babel --plugins transform-flow-comments,transform-es2015-classes index.js"
+  },
+  "keywords": [],
+  "author": "Kent C. Dodds <kent@doddsfamily.us> (http://kentcdodds.com/)",
+  "license": "MIT",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-plugin-transform-es2015-classes": "^6.24.1",
+    "babel-plugin-transform-flow-comments": "^6.22.0"
+  }
+}
