@@ -15,3 +15,5 @@ plugin only. The `both` script transpiles `index.js` with both plugins.
 You can see the output in `only-flow.js` and `both.js`. Interestingly, if I run
 babel with `transform-es2015-classes` on `only-flow.js` then I get
 `flow-then-classes.js` which is correct I think.
+
+**Note**: the files have been autoformatted with `prettier` thanks to my editor...
